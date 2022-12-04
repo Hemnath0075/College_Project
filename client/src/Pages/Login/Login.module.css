@@ -28,6 +28,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5%;
 }
 
 .heading_text{
@@ -90,7 +91,7 @@ form {
 }
 
 .main_text{
-    margin-top: 5%;
+    margin-top: 0%;
     margin-left: 10%;
 }
 
