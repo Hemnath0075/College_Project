@@ -18,7 +18,7 @@ function Login() {
     })
     if(response.data.message==="Success")
         toast.success("Logged In Successfully")
-        navigate('/predict-career')
+        navigate('/step-1')
     }
     catch(err){
       toast.error(err.response.data.error)
