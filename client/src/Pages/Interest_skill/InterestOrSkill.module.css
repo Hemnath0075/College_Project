@@ -21,9 +21,10 @@
 }
 
 .buttons{
-    padding: 20px;
+    padding: 15px 10px;
     background-color: #6B62FF;
     color: white;
     font-size: 2rem;
     cursor: pointer;
+    border-radius: 20px;
 }
