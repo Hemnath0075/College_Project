@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './QuizInterest.module.css'
+import Confetti from 'react-confetti'
 
 
 function QuizInterest() {
+    let width = window.innerWidth;
+    let height=window.innerHeight;
     const navigate = useNavigate();
     const [currentQuiz,setCurrentQuiz]=useState(0);
     const [webDev,setWebDev]=useState(0);
@@ -98,8 +101,12 @@ function QuizInterest() {
         </div>
     </div>}
     {showCareer &&  <div className={styles.page_container}>
+    <Confetti
+      width={width}
+      height={height}
+    />
         <div className={styles.Career_container}>
-            <p>{webDev>dataScience?"Congrats Full Stack Web Developer Is your Career":"Congrats Data Scientist Is your Career"}</p>
+            <p className={styles.Career_text}>{webDev>dataScience?"Congrats Full Stack Web Developer Is your Career :)":"Congrats Data Scientist Is your Career :)"}</p>
         </div>
     </div>}
     </>

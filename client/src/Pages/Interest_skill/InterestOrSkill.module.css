@@ -8,6 +8,10 @@
     gap: 60px;
 }
 
+.note_content{
+    border: 2px solid black;
+    padding: 20px;
+}
 
 
 .note_content > p{
