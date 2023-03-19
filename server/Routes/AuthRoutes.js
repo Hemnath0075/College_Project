@@ -44,6 +44,15 @@ Router.post('/login',async(req,res)=>{
     }
 })
 
+// Router.post('/update/career',async(req,res)=>{
+//     try{
+//         const findUser=await 
+//     }
+//     catch(err){
+//         return res.status(500).json({error:err})
+//     }
+// })
+
 //forgotpassword
 
 

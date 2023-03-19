@@ -16,6 +16,9 @@ const UserSchema = new mongoose.Schema({
     resetToken:{
         type:String,
         createdAt:{type:Date,required:true},
+    },
+    predictedCareer:{
+        type:String
     }
 })
 

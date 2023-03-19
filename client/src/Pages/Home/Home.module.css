@@ -1,1 +1,100 @@
 /* css file for home page */
+.container{
+    background-color: whitesmoke;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.navbar{
+    height: 70px;
+    background-color: black;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left_navbar{
+    color: white;
+    font-size: larger;
+    margin-left: 20px;
+}
+.right_navbar{
+    color: white;
+    margin-right: 20px;
+}
+
+.right_navbar > button {
+    padding: 5px 15px;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.welcome_section{
+    height: 100px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.body{
+    display: flex;
+    flex-direction: row;
+}
+
+.left_body{
+    background-color: whitesmoke;
+    flex-basis: 50%;
+    height: 100vh;
+}
+
+.right_body{
+    background-color: white;
+    flex-basis: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid grey;
+}
+
+.topic{
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5%;
+}
+
+.Roadmap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.description{
+    font-size: larger;
+    padding:10px 20px;
+}
+
+.description > ul{
+    list-style: none !important;
+}
+
+.links{
+    text-decoration: none;
+    color: black;
+}
+
+.links > a{
+    margin-left: 30%;
+}
+
+
+
+
+

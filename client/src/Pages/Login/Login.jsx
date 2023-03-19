@@ -12,7 +12,7 @@ function Login() {
   const {register,handleSubmit}=useForm();
   const submit = async(data) =>{
     try{
-      const response = await axios.post('http://localhost:9000/login',{
+      const response = await axios.post('http://localhost:5001/login',{
       email:data.email,
       password:data.password
     })

@@ -12,7 +12,7 @@ function Signup() {
   const { register, handleSubmit } = useForm();
   const submit = async(data) =>{
     try{
-      const response = await axios.post('http://localhost:9000/signup',{
+      const response = await axios.post('http://localhost:5001/signup',{
       email:data.email,
       password:data.password,
       username:data.username
