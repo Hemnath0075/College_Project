@@ -91,7 +91,8 @@ function Home() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const data = await axios.get("http://localhost:5001/roadmap/fswd");
+        const career=localStorage.getItem("career");
+        const data = await axios.get(`http://localhost:5001/roadmap/${career}`);
         let quote = await axios.get("https://type.fit/api/quotes");
         setQuote(quote.data[0].text);
         setPageData(data.data.getRoadmapData);
@@ -106,7 +107,7 @@ function Home() {
       <div className={styles.navbar}>
         <div className={styles.left_navbar}>Hello Guruprakash </div>
         <div className={styles.right_navbar}>
-          <button className={styles.logout_button} onClick={()=>navigate('/login')}>Logout</button>
+          <button className={styles.logout_button} onClick={()=>{navigate('/login');localStorage.removeItem("email");localStorage.removeItem("career")}}>Logout</button>
         </div>
       </div>
       <div className={styles.welcome_section}>

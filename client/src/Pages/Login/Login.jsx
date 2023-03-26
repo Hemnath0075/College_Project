@@ -17,6 +17,8 @@ function Login() {
       password:data.password
     })
     if(response.data.message==="Success")
+        localStorage.setItem("email",response.data.user.email);
+        localStorage.setItem("career",response.data.user.predictedCareer);
         toast.success("Logged In Successfully")
         navigate('/step-1')
     }

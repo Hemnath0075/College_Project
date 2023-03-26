@@ -44,14 +44,15 @@ Router.post('/login',async(req,res)=>{
     }
 })
 
-// Router.post('/update/career',async(req,res)=>{
-//     try{
-//         const findUser=await 
-//     }
-//     catch(err){
-//         return res.status(500).json({error:err})
-//     }
-// })
+Router.put('/update/career',async(req,res)=>{
+    try{
+        const findUser=await UserModel.findOneAndUpdate({email:req.body.email},{predictedCareer:req.body.predictedCareer},{new:true});
+        return res.status(200).json({message:"Success",user:findUser})
+    }
+    catch(err){
+        return res.status(500).json({error:err})
+    }
+})
 
 //forgotpassword
 

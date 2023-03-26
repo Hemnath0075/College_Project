@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './QuizSkills.module.css'
 import Confetti from 'react-confetti'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
 
 function QuizSkills() {
@@ -24,6 +27,27 @@ function QuizSkills() {
         quiz10:false,
     })
     const [showCareer,setShowCareer]=useState(false);
+    useEffect(()=>{
+        if(showCareer){
+            const submit = async(data) =>{
+                try{
+                  const response = await axios.put('http://localhost:5001/update/career/',{
+                  email:localStorage.getItem("email"),
+                  predictedCareer:webDev>dataScience?"fswd":"ds"
+                })
+                if(response.data.message==="Success")
+                    localStorage.setItem("career",response.data.user.predictedCareer)
+                    setTimeout(()=>{
+                        navigate('/home');
+                    },5000)
+                }
+                catch(err){
+                  toast.error(err.response.data.error)
+                }
+              }
+              submit();
+        }
+    },[showCareer])
   return (
     <>
     {currentQuiz ===0 && <div className={styles.page_container}>
@@ -201,6 +225,7 @@ document.getElementById("demo").innerHTML = txt1 + txt2;</code>
             <p className={styles.Career_text}>{webDev>dataScience?"Congrats Full Stack Web Developer Is your Career :)":"Congrats Data Scientist Is your Career :)"}</p>
         </div>
     </div>}
+    <ToastContainer />
     </>
   )
 }
